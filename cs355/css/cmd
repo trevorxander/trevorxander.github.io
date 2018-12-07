@@ -1,0 +1,195 @@
+//Miguel trevor
+
+
+A.
+
+Root Directory
+
+trevor@ubuntu:~$ cd /
+trevor@ubuntu:/$ ls -l
+total 970072
+drwxr-xr-x   2 root root      4096 Feb  2 23:16 bin
+drwxr-xr-x   3 root root      4096 Feb  2 23:19 boot
+drwxrwxr-x   2 root root      4096 Feb  2 23:02 cdrom
+drwxr-xr-x  18 root root      3980 Mar  3 00:13 dev
+drwxr-xr-x 123 root root     12288 Mar  2 23:18 etc
+drwxr-xr-x   3 root root      4096 Feb  2 23:03 home
+...
+===================================================================================================
+/bin
+trevor@ubuntu:/$ cd /bin
+trevor@ubuntu:/bin$ ls -l
+total 12432
+-rwxr-xr-x 1 root root 1113504 Apr  4 11:30 bash
+-rwxr-xr-x 1 root root  748968 Aug 29 00:57 brltty
+-rwxr-xr-x 1 root root   34888 Jan 29  2017 bunzip2
+-rwxr-xr-x 1 root root 2022480 Dec 12  2017 busybox
+-rwxr-xr-x 1 root root   34888 Jan 29  2017 bzcat
+lrwxrwxrwx 1 root root       6 Feb  2 22:59 bzcmp -> bzdiff
+...
+
+-rwxr-xr-x 1 root root 1113504 Apr  4 11:30 bash 	//HERE
+-rwxr-xr-x 1 root root   35064 Jan 18  2018 cat		//concatenate 
+-rwxr-xr-x 1 root root   59608 Jan 18  2018 chmod	//change permission	
+-rwxr-xr-x 1 root root   67768 Jan 18  2018 chown	//change owner
+-rwxr-xr-x 1 root root   35000 Jan 18  2018 echo	//print
+-rwxr-xr-x 1 root root   26704 May 14 05:01 kill	//end process
+-rwxr-xr-x 1 root root   35000 Jan 18  2018 rmdir	//delete dir
+===================================================================================================
+/dev
+trevor@ubuntu:/bin$ cd ..
+trevor@ubuntu:/$ cd dev
+trevor@ubuntu:/dev$ ls -l
+total 0
+crw-------  1 root   root     10, 175 Mar  3 00:13 agpgart
+crw-r--r--  1 root   root     10, 235 Mar  3 00:13 autofs
+drwxr-xr-x  2 root   root         400 Mar  3 13:47 block
+drwxr-xr-x  2 root   root         100 Mar  3 00:13 bsg
+crw-------  1 root   root     10, 234 Mar  3 00:13 btrfs-control
+drwxr-xr-x  3 root   root          60 Mar  3 00:13 bus
+lrwxrwxrwx  1 root   root           3 Mar  3 00:13 cdrom -> sr0
+...
+Recognized dev
+-cpu_dma_latency/ //HERE
+	QoS file used to regulate CPU energy consumption
+-console
+	System console
+===================================================================================================
+/etc
+
+//HERE
+trevor@ubuntu:/dev$ cd ..
+trevor@ubuntu:/$ cd etc
+trevor@ubuntu:/etc$ ls -l
+total 1080
+-rw-r--r--  1 root root      96 Jul 24 20:04 environment
+drwxr-xr-x  6 root root    4096 Jul 24 20:07 kernel
+-rw-r--r--  1 root root    2405 Mar  2 23:03 passwd
+-rw-r--r--  1 root root    2405 Mar  2 23:03 passwd-
+
+Most common permission is user read. This means the user has permission to read most of the files.//HERE
+
+trevor:x:1000:1000:Lito,,,:/home/trevor:/bin/bash
+===================================================================================================
+B.
+
+10. 
+trevor@ubuntu:/bin$ echo $HOME
+/home/trevor
+
+11.
+trevor@ubuntu:/bin$ pwd
+/bin
+trevor@ubuntu:/bin$ 
+===================================================================================================
+C.
+
+1.
+trevor@ubuntu:~$ echo $SHELL
+/bin/bash
+trevor@ubuntu:~$ 
+
+2.
+trevor@ubuntu:/etc$ cat /etc/shells
+# /etc/shells: valid login shells
+/bin/sh
+/bin/bash
+/bin/rbash
+/bin/dash
+/bin/tcsh
+/usr/bin/tcsh
+/bin/csh
+
+3.
+trevor@ubuntu:/etc$ sudo chsh
+Password: 
+Changing the login shell for trevor
+Enter the new value, or press ENTER for the default
+	Login Shell [/bin/bash]: /usr/bin/tcsh
+
+trevor@ubuntu:/etc$ 
+
+4.
+ubuntu:/> echo $0
+tcsh
+ubuntu:/> 
+//after this I set back my shell login to /bin/bash
+===================================================================================================
+D.
+1.-3.
+
+trevor@ubuntu:~$ ps -l
+F S   UID    PID   PPID  C PRI  NI ADDR SZ WCHAN  TTY          TIME CMD
+0 S  1000   1735   1725  0  80   0 -  7388 wait   pts/0    00:00:00 bash
+4 R  1000   3101   1735  0  80   0 -  9004 -      pts/0    00:00:00 ps
+
+
+
+F 	Flags
+S  	Process status code
+
+UID 	Username of the process's owner 
+PID 	Process ID number
+PPID	number of the process's parent processID 
+		
+C	CPU usage and scheduling information
+PRI 	Priority of the process
+NI 	nice value
+ADDR 	Memory address of the process 
+SZ 	Virtual memory usage
+WCHAN 	Memory address of the event the process is waiting for
+TTY 	Terminal associated with the process
+
+TIME 	Total CPU usage
+CMD	Command in process
+
+4. 
+
+top - 15:53:58 up  1:22,  1 user,  load average: 0.36, 0.27, 0.21
+Tasks: 277 total,   1 running, 211 sleeping,   0 stopped,   0 zombie <<<<<<<<<<<<<
+%Cpu(s):  3.5 us,  4.9 sy,  0.0 ni, 91.6 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+KiB Mem :  2017284 total,   207388 free,  1559188 used,   250708 buff/cache
+KiB Swap:   969960 total,   717288 free,   252672 used.   263276 avail Mem 
+
+5.
+Tasks: 277 total,   1 running, 211 sleeping,   0 stopped,   0 zombie <<<<<<<<<<<<<
+===================================================================================================
+
+
+E.
+1. 
+There are two kinds of processes: Foreground and backGround processes.
+forground processes are graphical display processes and are, by default, run when keyboard inputs
+are given and sends the output to the screen.
+
+Background processes: Run in the background without keyboard input and waits til keyboard input i required. As a result one can run other processes in parrallel. Background processes do not have to wait for other previous processes to continue. Therefore commands are processes.
+
+To create a processes in C one needs to use the fork() and then the exec() in their code.
+
+2.
+trevor@ubuntu:/home$ ./parent
+Process[8422]: Parent in execution ...
+Process[8423]: child in execution ...
+Process[8423]: child terminating ...
+Process[8422]: Parent detects terminating child
+
+trevor@ubuntu:/home$ ./orphan
+I'm the original process with PID 8430 and PPID 8387.
+I'm the parent process with PID 8430 and PPID 8387.
+my child's PID 8431
+PID 8430 terminates.
+trevor@ubuntu:/home$ I'm the child process with PID 8431 and PPID 1175.
+PID 8431 terminates.
+
+parent is created
+the child is then created via fork()
+the child then sleeps and since the parent via wait can detect child is terminating
+the parent proceeds to terminate.
+The child will not be a zombie because the parent waited for the child to terminate
+
+for orphan.c
+the parent and child are running concurrently parent is created first followed by the child.
+the parent then terminates leaving process 8431 as an orphan the system gives the orphan a new ppid which is 1175
+
+
+

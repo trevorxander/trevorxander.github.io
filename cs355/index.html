@@ -1,0 +1,130 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>"CS355"</title>
+  <meta name="Trevor Xander" content="SitePoint">
+
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="scripts/script.js"></script>
+  <script src="scripts/canvasjs.min.js"></script>
+</head>
+
+<body>
+<div class="topnav" id="mainNav">
+    <a id = browserNavBtn href="#home" class="label nameFirst">Trevor</a>
+    <a id = browserNavBtn href="#home" class="label nameLast">Xander</a>
+    <a id = homeNavBtn href="#home" class="first navBtn">Home </a>
+    <a id = projectsNavBtn href="#projects" class="navBtn">Projects</a>
+    <a id = aboutNavBtn href="#about" class="navBtn">About</a>
+    <a id = browserNavBtn href="#browser" class="navBtn">Browser</a>
+</div>
+<!-- Default Dynamic Section -->
+<div id="home" class="page">
+  <p>CS355 stuff</p>
+</div>
+<!-- Dynamic Section 1 -->
+<div id="projects" class="page">
+  <table class="list" id="projectList">
+  	<tr>
+    	<td> <a href="./projects/0.html" class="project"> Project 0 </a> </td>
+   		<td> <a href="index.html" class="project"> Project 1 </a> </td>
+   		<td> <a href="#browser" class="project"> Project 2 </a> </td>
+	</tr>
+  </table>
+</div>
+<!-- Dynamic Section 2 -->
+<div id="about" class="page">
+  About Me Page (UNDER CONSTRUCTION!!)
+</div>
+<!-- Dynamic Section 3 -->
+<div id="browser" class="page">
+  <br>
+<form>
+	<div id="IP" class="form">
+        <p id="IPLabel" class="text">Internet Protocol:</p>
+        <select id="IPVersion" class="IP">
+            <option selected>Choose one...</option>
+            <option value="IPV4">IPV4</option>
+            <option value="IPV6">IPV6</option>
+        </select>
+    </div>
+
+    <br> <br>
+    <div class="form">
+        <p class="text">Routing Protocol:</p>
+        <select id="IPAdressing" class="IP">
+            <option selected>Choose one...</option>
+            <option value="classful">Classful</option>
+            <option value="classless">Classless</option>
+        </select>
+    </div>
+
+    <br> <br>
+    <div id="AC" class="form">
+        <p id="ACLabel" class="text">Address Control:</p>
+        <select id="IPClass" class="IP">
+            <option selected>Choose one...</option>
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="D">D</option>
+            <option value="E">E</option>
+        </select>
+    </div>
+
+    <br> <br>
+    <div id="ZC" class="form">
+        <p id="ZCLabel" class="text">Zero Compression:</p>
+        <select id="IPCompression" class="IP">
+            <option selected>Choose one...</option>
+            <option value="y">Yes</option>
+            <option value="n">No</option>
+        </select>
+    </div>
+
+	<br> <br> <br>
+    <div id="amountOfIP" class="form">
+        <label for="amtOfIP">Number of IP's Requested: </label>
+        <input id="amtOfIP" placeholder="1-50" type="number" min="1" max="50">
+    </div>
+
+    <br><br>
+
+    <ul id="IPAddresses">
+    </ul>
+     <input type="button" id="generateIPBtn" value ="Generate IPs" onchange="generateIPs()">
+
+    <br><br><br><br>
+    <br><br><br><br>
+    Select file with a list of URL to upload:
+    <input type="file" name="urlFile" id="urlFile" onchange="loadFile(this)">
+
+</form>
+<br><br>
+
+<div id = "urlTableContainer" class="hiddenElem" >
+<table id = "urlTable" class="table urlTable hiddenElem">
+  <tr class= "tableRow">
+    <th>Scheme</th>
+    <th>Domain</th>
+    <th>Port</th>
+    <th>Path</th>
+    <th>Query</th>
+    <th>Fragment</th>
+    <th>IP Address</th>
+  </tr>
+</table>
+</div>
+<br><br>
+<div id = "chartContainer" class= "chartContainer" width="100%">
+
+</div>
+
+
+</div>
+
+</body>
+</html>
