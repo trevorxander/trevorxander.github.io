@@ -112,6 +112,8 @@ td:last-child, th:last-child {
 .Port{
 float: right;  
 }
+
+
 @media (max-width: 1400px){
 
 .chart{

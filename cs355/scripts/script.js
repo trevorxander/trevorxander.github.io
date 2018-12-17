@@ -206,18 +206,114 @@ function addRowToURLTable (urlDetails){
 
 }
 
-function addRowIP (IP, isIPV6, isClassless, classLabel, zeroCompression ){
-  var table = document.getElementById("IPTable");
-  var row = table.insertRow(table.length);
-  for (var urlIt = 0; urlIt < urlDetails.length; urlIt++){
-    var urlPart = urlDetails[urlIt];
 
-    if (typeof(urlPart) == "undefined" || urlPart == "") urlPart = "N/A";
-    row.insertCell(urlIt).innerHTML = urlPart ;
-  }
 
+function random (min, max){
+  return Math.floor(Math.random()*(max-min+1)+min);
 }
 
+function clearIPs(){
+  var table = document.getElementById("IPTable");
+  table.classList.add("hiddenElem");
+  for(var i = table.rows.length - 1; i > 0; i--){
+    table.deleteRow(i);
+  }
+}
+function generateIPs (){
+
+  var table = document.getElementById("IPTable");
+  var classLabel = document.getElementById("IPClass");
+  var classLabelVal = classLabel.options[classLabel.selectedIndex].value;  
+
+  var adressType = document.getElementById("IPVersion");
+  var isIPV6 = adressType.options[adressType.selectedIndex].value;
+
+  var zeroCompression = document.getElementById("IPCompression");
+  var hasCompression = zeroCompression.options[zeroCompression.selectedIndex].value;
+
+  var noOfAddresses = document.getElementById("amtOfIP").value;
+  var type;
+
+  var IPs =[];
+  var newIP;
+  if (isIPV6 == "false"){
+    type = "IPv4";
+    while (IPs.length < noOfAddresses){
+      IPs.push(generateIPv4(classLabelVal));
+      IPs = getUnique (IPs);
+    }
+  }
+  else {
+    type = "IPv6";
+    classLabelVal = "Classless";
+    while (IPs.length < noOfAddresses){
+      IPs.push(generateIPv6(hasCompression));
+      IPs = getUnique (IPs);
+    }
+
+
+  }
+  if (noOfAddresses >=1) addIPRows (IPs, type, classLabelVal);
+}
+
+function addIPRows (IPs, type, classLabel){
+  var table = document.getElementById("IPTable");
+  for (var ip = 0; ip < IPs.length; ip++){
+    var row = table.insertRow(table.length);
+    row.insertCell(0).innerHTML = type;
+    row.insertCell(1).innerHTML = IPs[ip];
+    row.insertCell(2).innerHTML = classLabel;
+  }
+  table.classList.remove("hiddenElem");
+}
+function generateIPv4 (classLabel){
+  var first = "";
+  if (classLabel == "Classless") first = random (0,255) ;
+  if (classLabel == "A")  first = random (0,127);
+  if (classLabel == "B")  first = random (128,191);
+  if (classLabel == "C")  first = random (192,223);
+  if (classLabel == "D")  first = random (239,254);
+  if (classLabel == "E")  first = random (192,254);
+
+
+  return first + "." + random (0,255) + "." 
+                    + random (0,255) + "." 
+                    + random (0,255);
+          
+    
+}
+function generateIPv6 (hasCompression){
+  var ip = "";
+  for(i = 0; i < 8; ++i){
+    for(j = 0; j < 4; ++j){
+      ip += toHex (random(0,15));
+    }
+    ip += ":";
+  }
+  ip = ip.substring(0, ip.length - 1);
+
+  if (hasCompression){
+	  ip = ip.replaceAll ("0000","*");
+	  ip = ip.replaceAllReg (":0+",":");
+	  ip = ip.replace (new RegExp(":\\*:\\*(:\\*)+:", 'g'),"::");
+	  ip = ip.replaceAll ("*", 0);
+  }
+  return ip;
+}
+String.prototype.replaceAllReg = function(search, replacement) {
+    var target = this;
+    return target.replace(new RegExp(search, 'g'), replacement);
+};
+String.prototype.replaceAll = function(search, replacement) {
+    var target = this;
+    return target.split(search).join(replacement);
+};
+
+
+function toHex (decimal){
+  hexString = decimal.toString(16);
+  return hexString;
+}
 
 var curPage;
 var firstCall = true;
