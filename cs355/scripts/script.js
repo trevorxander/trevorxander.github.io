@@ -92,10 +92,10 @@ function drawPieChart (table, container) {
 
 
   var hiding = document.getElementById("urlTableContainer");
-
   hiding.classList.remove("hiddenElem");
+
   var hiding = document.getElementById("urlTable");
-    hiding.classList.remove("hiddenElem");
+  hiding.classList.remove("hiddenElem");
 
   var dataForCharts = summarize (table);
   var charts = [];
