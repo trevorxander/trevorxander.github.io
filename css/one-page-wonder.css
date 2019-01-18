@@ -1,0 +1,450 @@
+
+:root {
+  --nav-bg-color: rgba(255, 255, 255, 0.9);
+
+  --masthead-grad-start: rgb(0,0,0);
+  --masthead-grad-end: rgb(50,50,50);
+
+  --project-bg-color: rgba(255,255,255,.7);
+  --border-color: rgba(255,255,255,1);
+  --project-font-color: rgb(68,70,75) ;
+
+  --bg-color-start: rgb(200,200,200);
+  --bg-color-end: rgb(220,220,220);
+
+  --last-name-color: rgb(207,76,35);
+
+  --circle-grad-start:
+  --circle-grad-end: ;
+}
+body {
+  font-family: 'Lato';
+  background-color: rgb(229,229,229);
+}
+section{
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+.section-header{
+  text-align: center;
+}
+
+
+.section-description {
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 0px;
+  margin-bottom: 10%;
+
+  text-align: justify;
+  font-size: 18px;
+
+}
+
+.hidden{
+  display: none;
+}
+
+h1,
+h2,
+h3 {
+  white-space: nowrap;
+}
+h4,
+h5,
+h6 {
+  font-family: 'Lato';
+  font-weight: 800 !important;
+}
+
+.navbar-brand{
+  margin-left: 35%;
+}
+
+img, video {
+  box-shadow: 0px 0px 5px gray;
+  margin-top: 5px;
+  margin-bottom: 25px;
+}
+video {
+  width: 100%
+  height: auto;
+}
+
+.section-header {
+}
+.project {
+  color: black;
+
+  float: none;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  border-radius: 7px;
+  padding: 20px;
+  border: 1px solid white;
+  height: auto;
+
+  text-align: center;
+  box-shadow: 1px 1px 3px grey;
+
+  background: var(--project-bg-color);
+
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+
+}
+
+.progress {
+  border-radius: 7px;
+  box-shadow: none;
+  background: white;
+  transition: all 1s ease-in-out;
+  width: 5%;
+}
+
+.subheading {
+  margin-top: 4rem;
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+
+
+.progress.c {
+   background: linear-gradient(to right, rgba(129,139,152,.6), rgba(129,139,152 ,1)); 
+}
+.progress.cpp {
+   background: linear-gradient(to right, rgba(53,105,159,.6), rgba(53,105,159 ,1)); 
+}
+.progress.cshrp {
+   background: linear-gradient(to right, rgba(95,40,119,.6), rgba(95,40,119 ,1)); 
+}
+.progress.swift {
+   background: linear-gradient(to right, rgba(235,74,55,.6), rgba(235,74,55 ,1)); 
+}
+.progress.java {
+   background: linear-gradient(to right, rgba(235,156,63,.6), rgba(235,156,63 ,1)); 
+}
+.progress.python {
+   background: linear-gradient(to right, rgba(247,202,87,.6), rgba(247,202,87 ,1)); 
+}
+.progress.sql {
+   background: linear-gradient(to right, rgba(40,96,134,.6), rgba(40,96,134 ,1)); 
+}
+.progress.html {
+   background: linear-gradient(to right, rgba(211,87,54,.6), rgba(211,87,54 ,1)); 
+}
+.progress.css {
+   background: linear-gradient(to right, rgba(63,129,187,.6), rgba(63,129,187 ,1)); 
+}
+.progress.js {
+   background: linear-gradient(to right, rgba(230,135,70,.6), rgba(230,135,70 ,1)); 
+}
+.progress.ui {
+   background: linear-gradient(to right, rgba(109,201,98,.6), rgba(109,201,98 ,1)); 
+}
+.progress.qt {
+   background: linear-gradient(to right, rgba(109,201,98,.6), rgba(109,201,98 ,1)); 
+}
+.progress.scikit {
+   background: linear-gradient(to right, rgba(235,157,78,.6), rgba(235,157,78 ,1)); 
+}
+.progress.regression {
+   background: linear-gradient(to right, rgba(224,103,88,.6), rgba(224,103,88 ,1)); 
+}
+.progress.classification {
+   background: linear-gradient(to right, rgba(210,58,85,.6), rgba(210,58,85 ,1)); 
+}
+.progress.clustering {
+   background: linear-gradient(to right, rgba(73,156,173,.6), rgba(73,156,173 ,1)); 
+}
+.progress.dimention {
+   background: linear-gradient(to right, rgba(82,168,220,.6), rgba(82,168,220 ,1)); 
+}
+.progress.website {
+   background: linear-gradient(to right, rgba(219,51,120,.6), rgba(219,51,120 ,1)); 
+}
+.progress.database {
+   background: linear-gradient(to right, rgba(89,168,244,.6), rgba(89,168,244 ,1)); 
+}
+
+
+
+.skill-name {
+  margin-top: 2rem;
+  font-size: 1.2rem;
+}
+
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ffffff;
+
+  z-index: 99;
+  /* makes sure it stays on top */
+}
+
+#status {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  left: 50%;
+  /* centers the loading animation horizontally one the screen */
+  top: 50%;
+  /* centers the loading animation vertically one the screen */
+  background-image: url(../img/loading_screen.gif);
+  /* path to your loading animation */
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: -100px 0 0 -100px;
+  /* is width and height divided by two */
+}
+
+
+.project>*{
+  color: var(--project-font-color);
+}
+
+.project>h3 {
+  font-weight: bold;
+}
+
+.anchor-container {
+  text-align: left !important; 
+}
+
+.project a {
+  color: grey;
+}
+.project a:hover {
+  color: var(--project-font-color);
+  text-decoration: none;
+}
+
+#project-screen {
+  text-align: center;
+  
+}
+#project-screen * {
+  text-align: justify;
+  text-align: center;
+  margin:0 auto;
+}
+
+#project-screen p {
+  font-size: 1.2rem;
+}
+
+#project-screen h1 {
+  font-size: 3rem;
+  margin-top: 4rem;
+  margin-bottom: 0rem;
+}
+
+#project-screen h2 {
+  font-size: 2rem;
+  margin-top: 4rem;
+  margin-bottom: 0rem;
+}
+
+#project-screen h4 {
+  font-size: 2rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0rem;
+}
+
+.back-btn{
+  float: left;
+}
+
+#project-screen .project {
+  background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+  background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+  background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%); 
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 ); 
+  width: 94%;
+  max-width: 100%;
+}
+
+.btn-xl {
+  text-transform: uppercase;
+  padding: 1.5rem 3rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+}
+
+.bg-white {
+  background-color: #ffffff !important;
+}
+
+.navbar-custom {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: var(--nav-bg-color) !important;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
+}
+.masthead-heading .first .name{
+  color:gray;
+}
+.name{
+  font-size: 1.2rem;
+  letter-spacing: 0.1rem;
+  font-weight: 700;
+  color: inherit;
+}
+.last{
+  color: var(--last-name-color);
+}
+.last:hover{
+  color: var(--last-name-color);
+}
+
+.name:hover{
+  text-decoration: none;
+}
+.navbar-custom .navbar-brand {
+  transition: all 0.3s ease-in-out;
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
+  font-weight: 700;
+}
+
+.navbar-custom .navbar-nav .nav-item .nav-link {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+}
+
+.nav-item {
+  text-transform: uppercase;
+}
+
+header.masthead {
+  position: relative;
+  overflow: hidden;
+  padding-top: calc(7rem + 72px);
+  padding-bottom: 7rem;
+  background: -webkit-gradient(linear, left bottom, left top, from(var(--masthead-grad-start)), to(var(--masthead-grad-end)));
+  background: linear-gradient(0deg, var(--masthead-grad-start) 0%, var(--masthead-grad-end) 100%);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: scroll;
+  background-size: cover;
+}
+
+header.masthead .masthead-content {
+  z-index: 1;
+  position: relative;
+}
+
+header.masthead .masthead-content .masthead-heading-custom {
+  font-size: 4rem;
+}
+
+header.masthead .masthead-content .masthead-subheading-custom {
+  font-size: 2rem;
+}
+
+header.masthead .bg-circle {
+  z-index: 0;
+  position: absolute;
+  border-radius: 100%;
+  background: -webkit-gradient(linear, left bottom, left top, from(var(--masthead-grad-start)), to(var(--masthead-grad-end)));
+  background: linear-gradient(0deg, var(--masthead-grad-start) 0%, var(--masthead-grad-end) 100%);
+}
+
+header.masthead .bg-circle-1 {
+  height: 90rem;
+  width: 90rem;
+  bottom: -55rem;
+  left: -55rem;
+}
+
+header.masthead .bg-circle-2 {
+  height: 50rem;
+  width: 50rem;
+  top: -25rem;
+  right: -25rem;
+}
+
+header.masthead .bg-circle-3 {
+  height: 20rem;
+  width: 20rem;
+  bottom: -10rem;
+  right: 5%;
+}
+
+header.masthead .bg-circle-4 {
+  height: 30rem;
+  width: 30rem;
+  top: -5rem;
+  right: 35%;
+}
+
+@media (min-width: 576px) {
+
+  .navbar-brand{
+    margin-left: 0%;
+
+  }
+
+}
+
+@media (min-width: 992px) {
+
+  .navbar-custom {
+    height: 72px;
+  }
+
+  header.masthead {
+    padding-top: calc(10rem + 55px);
+    padding-bottom: 10rem;
+  }
+  header.masthead .masthead-content .masthead-heading-custom {
+    font-size: 5rem;
+  }
+  header.masthead .masthead-content .masthead-subheading-custom {
+    font-size: 4rem;
+  }
+}
+
+.bg-primary {
+  background-color: #ee0979 !important;
+}
+
+.btn-primary {
+  background-color: #ee0979;
+  border-color: #ee0979;
+}
+
+.btn-primary:active, .btn-primary:focus, .btn-primary:hover {
+  background-color: #bd0760 !important;
+  border-color: #bd0760 !important;
+}
+
+.btn-primary:focus {
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(238, 9, 121, 0.5);
+  box-shadow: 0 0 0 0.2rem rgba(238, 9, 121, 0.5);
+}
+
+.btn-secondary {
+  background-color: #ff6a00;
+  border-color: #ff6a00;
+}
+
+.btn-secondary:active, .btn-secondary:focus, .btn-secondary:hover {
+  background-color: #cc5500 !important;
+  border-color: #cc5500 !important;
+}
+
+.btn-secondary:focus {
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(255, 106, 0, 0.5);
+  box-shadow: 0 0 0 0.2rem rgba(255, 106, 0, 0.5);
+}

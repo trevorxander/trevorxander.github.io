@@ -84,6 +84,7 @@ function displayURL (e){
    drawPieChart (document.getElementById("urlTable"), document.getElementById("chartContainer"));
 
 }
+
 function isNumber(n){
     return typeof(n) != "boolean" && !isNaN(n);
 }
