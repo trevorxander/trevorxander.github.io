@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="author" content="Trevor Xander">
 
     <title>Trevor Xander - Portfolio</title>
 
@@ -15,11 +15,48 @@
 
 
     <!-- Custom fonts for this template -->
-    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
-    <link href="css/one-page-wonder.css" rel="stylesheet">
+
+    <style>
+      #preloader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(255,255,255,1);
+        z-index: 99;
+      }
+
+      #status {
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        background-image: url(./img/loading_screen.gif);
+        background-repeat: no-repeat;
+        background-position: center;
+        margin: -100px 0 0 -100px;
+        
+      }
+
+    </style>
+
+    <!-- Custom css -->
+    <link href="./css/one-page-wonder.css" rel="stylesheet">
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./img/icons/favicon-16x16.png">
+    <link rel="manifest" href="./img/icons/site.webmanifest">
+    <link rel="mask-icon" href="./img/icons/safari-pinned-tab.svg" color="#f19837">
+    <link rel="shortcut icon" href="./img/icons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="msapplication-config" content="./img/icons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
 
   </head>
 
@@ -35,10 +72,10 @@
                                   <span class="last name">Xander</span>
                                   
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler mr-auto deleted" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
+        <div class="collapse navbar-collapse " id="navbarResponsive">
           <ul class="navbar-nav ml-auto hidden">
             <li class="nav-item">
               <a class="nav-link" href="#about" onclick="removeHash()">About Me</a>
@@ -139,7 +176,6 @@
               <div class='skillset col-xs-12 col-lg-6 col-xl-6'>
                   
                   <h3 class="subheading"> Design </h3> 
-
                   <h3 class="skill-name"> UI & UX Design </h3>
                   <div class="progress ui">
                     <div class="progress-bar ui" > </div>
@@ -221,7 +257,7 @@
           <div class="col-xl-4 col-lg-4 col-md-6 col-s-12 col-xs-12">
             <div class="project">
               <h3>2048</h3>
-              <video class="img-fluid rounded" autoplay loop muted inline>
+              <video class="img-fluid rounded" autoplay loop muted playsinline>
                <source src="./img/projects/2048/thumbnail.mp4" type="video/mp4">
               </video>
               <p>
@@ -263,7 +299,7 @@
           <div class="col-xl-4 col-lg-4 col-md-6 col-s-12 col-xs-12">
             <div class="project">
               <h3>OpenGL</h3>
-              <video class="img-fluid rounded" autoplay loop muted inline>
+              <video class="img-fluid rounded" autoplay loop muted playsinline>
                <source src="./img/projects/opengl/thumbnail.mp4" type="video/mp4">
               </video>
               <p>

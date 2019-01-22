@@ -26,13 +26,20 @@ var skillset = {'c': '75%',
                 'website': '70%',
                 'database': '80%'
                 };
-var skillBarMinWidth = '5%';
-$(window).on('scroll', function(){
-  
-  var top = $('.progress.c')[0];
-  var botton = $('.progress.dimention')[0];
+var skillBarMinWidth = '0%';
 
-  if (checkVisible(top) || checkVisible(botton)){
+$(window).on('resize', function(){
+  window.dispatchEvent(new Event('scroll'));
+});
+
+
+$(window).on('scroll', function(){
+  var skillsVisible = false;
+  Object.keys(skillset).forEach(function(key) { 
+        var skillBar = $('.progress.' + key);
+        if (checkVisible(skillBar[0])) skillsVisible = true;
+  });
+  if (skillsVisible){
     Object.keys(skillset).forEach(function(key) { 
         var skillBar = $('.progress.' + key);
         skillBar.css('width',skillset[key]);    
@@ -51,6 +58,7 @@ function showLoadingScreen(){
   $('#status').show();
   $('#preloader').show();
   $('.navbar-nav').addClass('hidden');
+  $('.navbar-toggler').addClass('deleted');
 }
 
 function removeLoadingScreen(){ 
@@ -61,18 +69,24 @@ function removeLoadingScreen(){
   $('body').delay(350).css({'overflow':'visible'});
   
   $('.navbar-nav').removeClass('hidden');
+  $('.navbar-toggler').removeClass('deleted');
 
-  
+  window.dispatchEvent(new Event('resize'));
+
 }
 
 
 function changePage(){
+
 	var hash = window.location.hash.substr(1);
 
-  if (hash == '') hash = home;
+  if (hash == '') hash = 'home';
+
 	switch (hash) {
 		case 'home':
       scrollToElement('body');
+      $('#project-section').removeClass('hidden');
+      $('#project-screen').addClass('hidden');
 			break;
 		case 'about':
       scrollToElement('#about-section');
@@ -89,6 +103,7 @@ function changePage(){
 		case 'project':
       $('#project-section').removeClass('hidden');
       $('#project-screen').addClass('hidden');
+      window.dispatchEvent(new Event('resize'));
       scrollToElement('#project-section');
 			break;
 
@@ -100,8 +115,8 @@ function changePage(){
 	}
 }
 
+displayedProject = '';
 function showProject(projectName){
-
   projectPath = './projects/' + projectName + ".html";
   var $projectScreen = $('#project-screen')
 
@@ -149,9 +164,9 @@ $container.imagesLoaded(function(){
 });
 
 function removeHash () { 
-    window.location.hash = "_";
+    window.dispatchEvent(new HashChangeEvent("hashchange"));
 }
-var navBarLength = 77;
+var navBarLength = 188;
 function scrollToElement(element, duration = 500) { 
   var startingY = window.pageYOffset;
   var diff = (window.pageYOffset + document.querySelector(element).getBoundingClientRect().top) - startingY - navBarLength;
