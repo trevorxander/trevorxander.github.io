@@ -4,3 +4,11 @@
 cs355/URL List\.txt
 
 cs355/url_list\.txt
+
+node_modules/
+
+package-lock\.json
+
+package\.json
+
+\.idea/
