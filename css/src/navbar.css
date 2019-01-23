@@ -1,0 +1,77 @@
+/* navbar.css */
+
+
+:root {
+    --nav-bg-color: rgba(255, 255, 255, 0.9);
+    --last-name-color: rgb(207, 76, 35);
+}
+
+.navbar-custom .navbar-brand {
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+    font-weight: 700;
+}
+
+.navbar-custom .navbar-nav .nav-item .nav-link {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+}
+
+.nav-item {
+    text-transform: uppercase;
+}
+
+.navbar-brand {
+    position: absolute;
+    left: 50%;
+    transform: translatex(-50%);
+    transition: all .05s ease-out;
+}
+
+.navbar-toggler {
+    margin-bottom: 5px;
+}
+
+.navbar-custom {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: var(--nav-bg-color) !important;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+
+}
+
+.name {
+    font-size: 1.2rem;
+    letter-spacing: 0.1rem;
+    font-weight: 700;
+    color: inherit;
+}
+
+.name:hover {
+    text-decoration: none;
+}
+
+.last {
+    color: var(--last-name-color);
+}
+
+.last:hover {
+    color: var(--last-name-color);
+}
+
+
+@media (min-width: 992px) {
+
+    .navbar-brand {
+        position: absolute;
+        left: 2%;
+        transform: translatex(0%);
+    }
+
+    .navbar-custom {
+        height: 77px;
+    }
+}
+

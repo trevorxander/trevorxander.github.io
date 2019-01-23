@@ -1,0 +1,95 @@
+/* project.css */
+
+
+:root {
+    --project-bg-color: rgba(255, 255, 255, .7);
+    --project-font-color: rgb(68, 70, 75);
+}
+
+.project {
+    color: black;
+
+    float: none;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    border-radius: 7px;
+    padding: 20px;
+    border: 1px solid white;
+    height: auto;
+
+    text-align: center;
+    box-shadow: 1px 1px 3px grey;
+
+    background: var(--project-bg-color);
+
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+
+}
+
+.project > * {
+    color: var(--project-font-color);
+}
+
+.project > h3 {
+    font-weight: bold;
+}
+
+.project a {
+    color: grey;
+}
+
+.project a:hover {
+    color: var(--project-font-color);
+    text-decoration: none;
+}
+
+.anchor-container {
+    text-align: left !important;
+}
+
+.back-btn {
+    float: left;
+}
+
+#project-screen {
+    text-align: center;
+
+}
+
+#project-screen * {
+    text-align: center;
+    margin: 0 auto;
+}
+
+#project-screen p {
+    font-size: 1.2rem;
+}
+
+#project-screen h1 {
+    font-size: 3rem;
+    margin-top: 4rem;
+    margin-bottom: 0;
+}
+
+#project-screen h2 {
+    font-size: 2rem;
+    margin-top: 4rem;
+    margin-bottom: 0;
+}
+
+#project-screen h4 {
+    font-size: 2rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0;
+}
+
+#project-screen .project {
+    background: -moz-linear-gradient(top, var(--project-bg-color) 0%, rgba(255, 255, 255, 0) 100%);
+    background: -webkit-linear-gradient(top, var(--project-bg-color) 0%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(to bottom, var(--project-bg-color) 0%, rgba(255, 255, 255, 0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#00ffffff', GradientType=0);
+    width: 94%;
+    max-width: 100%;
+}
+

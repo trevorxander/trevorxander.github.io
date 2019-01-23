@@ -1,0 +1,54 @@
+/* main.css */
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: rgb(242, 242, 242);
+}
+
+section {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+
+h1,
+h2,
+h3 {
+    white-space: nowrap;
+}
+
+h4,
+h5,
+h6 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 800 !important;
+}
+
+img, video {
+    box-shadow: 0 0 5px gray;
+    margin-top: 5px;
+    margin-bottom: 25px;
+}
+
+video {
+    width: 100%;
+    height: auto;
+}
+
+.section-header {
+    text-align: center;
+}
+
+.section-description {
+    margin: 0 10% 10%;
+    text-align: justify;
+    font-size: 18px;
+}
+
+.hidden {
+    display: none;
+}
+
+.deleted {
+    visibility: hidden;
+}
+

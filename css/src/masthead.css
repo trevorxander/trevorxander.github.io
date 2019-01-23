@@ -1,0 +1,127 @@
+/* masthead.css */
+
+
+:root {
+    --masthead-grad-start: rgb(0, 0, 0);
+    --masthead-grad-end: rgb(50, 50, 50);
+}
+
+
+header.masthead {
+    position: relative;
+    overflow: hidden;
+    padding-top: calc(7rem + 72px);
+    padding-bottom: 7rem;
+    background: -webkit-gradient(linear, left bottom, left top, from(var(--masthead-grad-start)), to(var(--masthead-grad-end)));
+    background: linear-gradient(0deg, var(--masthead-grad-start) 0%, var(--masthead-grad-end) 100%);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: scroll;
+    background-size: cover;
+}
+
+header.masthead .masthead-content {
+    z-index: 1;
+    position: relative;
+}
+
+header.masthead .masthead-content .masthead-heading-custom {
+    font-size: 4rem;
+}
+
+header.masthead .masthead-content .masthead-subheading-custom {
+    font-size: 2rem;
+}
+
+header.masthead .bg-circle {
+    z-index: 0;
+    position: absolute;
+    border-radius: 100%;
+    background: -webkit-gradient(linear, left bottom, left top, from(var(--masthead-grad-start)), to(var(--masthead-grad-end)));
+    background: linear-gradient(0deg, var(--masthead-grad-start) 0%, var(--masthead-grad-end) 100%);
+}
+
+header.masthead .bg-circle-1 {
+    height: 90rem;
+    width: 90rem;
+    bottom: -55rem;
+    left: -55rem;
+}
+
+header.masthead .bg-circle-2 {
+    height: 50rem;
+    width: 50rem;
+    top: -25rem;
+    right: -25rem;
+}
+
+header.masthead .bg-circle-3 {
+    height: 20rem;
+    width: 20rem;
+    bottom: -10rem;
+    right: 5%;
+}
+
+header.masthead .bg-circle-4 {
+    height: 30rem;
+    width: 30rem;
+    top: -5rem;
+    right: 35%;
+}
+
+.masthead-heading {
+    color: gray;
+}
+
+.btn-xl {
+    text-transform: uppercase;
+    padding: 1.5rem 3rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+}
+
+@media (min-width: 992px) {
+    header.masthead {
+        padding-top: calc(10rem + 55px);
+        padding-bottom: 10rem;
+    }
+
+    header.masthead .masthead-content .masthead-heading-custom {
+        font-size: 5rem;
+    }
+
+    header.masthead .masthead-content .masthead-subheading-custom {
+        font-size: 4rem;
+    }
+}
+
+.btn-primary {
+    background-color: rgb(236, 112, 48);
+    border-color: rgb(236, 112, 48) !important;
+    border: 2px solid;
+
+    -webkit-transition: background-color 1s !important;
+    -moz-transition: background-color 1s !important;
+    -o-transition: background-color 1s !important;
+    transition: background-color 1s !important;
+}
+
+.btn-primary:hover {
+    background: -moz-linear-gradient(top, var(--masthead-grad-start) 0%, var(--masthead-grad-end) 100%);
+    background: -webkit-linear-gradient(top, var(--masthead-grad-start) 0%, var(--masthead-grad-end) 100%);
+    background: linear-gradient(to bottom, var(--masthead-grad-start) 0%, var(--masthead-grad-end) 100%);
+    border-color: rgb(236, 112, 48) !important;
+
+    -webkit-transition: background-color 1s;
+    -moz-transition: background-color 1s;
+    -o-transition: background-color 1s;
+    transition: background-color 1s;
+}
+
+.btn-primary:focus {
+    -webkit-box-shadow: 0 0 0 0.2rem rgba(238, 9, 121, 0.5);
+    box-shadow: 0 0 0 0.2rem rgba(238, 9, 121, 0.5);
+}
+
+
