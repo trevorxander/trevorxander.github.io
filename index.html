@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
+<head>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -11,41 +11,44 @@
     <title>Trevor Xander - Portfolio</title>
 
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+          crossorigin="anonymous">
 
 
     <!-- Custom fonts for this template -->
-    <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i"
+          rel="stylesheet">
 
 
     <style>
-      #preloader {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: rgba(255,255,255,1);
-        z-index: 99;
-      }
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 1);
+            z-index: 99;
+        }
 
-      #status {
-        width: 200px;
-        height: 200px;
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        background-image: url(./img/loading_screen.gif);
-        background-repeat: no-repeat;
-        background-position: center;
-        margin: -100px 0 0 -100px;
-        
-      }
+        #status {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            background-image: url(./img/loading_screen.gif);
+            background-repeat: no-repeat;
+            background-position: center;
+            margin: -100px 0 0 -100px;
+
+        }
 
     </style>
 
     <!-- Custom css -->
-    <link href="./css/one-page-wonder.css" rel="stylesheet">
+    <link href="css/style.min.css" rel="stylesheet">
 
 
     <link rel="apple-touch-icon" sizes="180x180" href="./img/icons/apple-touch-icon.png">
@@ -58,324 +61,340 @@
     <meta name="msapplication-config" content="./img/icons/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
 
-  </head>
+</head>
 
-  <body>
-    <div id="preloader">
-     <div id="status">&nbsp;</div>
-    </div>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light navbar-custom fixed-top">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#home"  onclick="removeHash()">
-                                  <span class="first name">Trevor</span>
-                                  <span class="last name">Xander</span>
-                                  
+<body>
+<div id="preloader">
+    <div id="status">&nbsp;</div>
+</div>
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light navbar-custom fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#home" onclick="removeHash()">
+            <span class="first name">Trevor</span>
+            <span class="last name">Xander</span>
+
         </a>
-        <button class="navbar-toggler mr-auto deleted" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+        <button class="navbar-toggler mr-auto deleted" type="button" data-toggle="collapse"
+                data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse " id="navbarResponsive">
-          <ul class="navbar-nav ml-auto hidden">
-            <li class="nav-item">
-              <a class="nav-link" href="#about" onclick="removeHash()">About Me</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#skills" onclick="removeHash()">Skills</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#project" onclick="removeHash()">Projects</a>
-            </li>
-          </ul>
+            <ul class="navbar-nav ml-auto hidden">
+                <li class="nav-item">
+                    <a class="nav-link" href="#about" onclick="removeHash()">About Me</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#skills" onclick="removeHash()">Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#project" onclick="removeHash()">Projects</a>
+                </li>
+            </ul>
         </div>
-      </div>
-    </nav>
+    </div>
+</nav>
 
-    <header class="masthead text-center text-white">
-      <div class="masthead-content">
-        <div class="container">  
-          <h1 class="masthead-heading-custom">Portfolio</h1>
-          <h2 class="masthead-subheading-custom ">Perform. Create. Adapt.</h2>
-          <a href="#project"  onclick="removeHash()" class="btn btn-primary btn-xl rounded-pill mt-5">Projects</a>
+<header class="masthead text-center text-white">
+    <div class="masthead-content">
+        <div class="container">
+            <h1 class="masthead-heading-custom">Portfolio</h1>
+            <h2 class="masthead-subheading-custom ">Perform. Create. Adapt.</h2>
+            <a href="#project" onclick="removeHash()" class="btn btn-primary btn-xl rounded-pill mt-5">Projects</a>
         </div>
-      </div>
-      <div class="bg-circle-1 bg-circle"></div>
-      <div class="bg-circle-2 bg-circle"></div>
-      <div class="bg-circle-3 bg-circle"></div>
-      <div class="bg-circle-4 bg-circle"></div>
-    </header>
+    </div>
+    <div class="bg-circle-1 bg-circle"></div>
+    <div class="bg-circle-2 bg-circle"></div>
+    <div class="bg-circle-3 bg-circle"></div>
+    <div class="bg-circle-4 bg-circle"></div>
+</header>
 
-    <section class="section" id="about-section">
-      <div class="container">
-    
+<section class="section" id="about-section">
+    <div class="container">
+
         <h3 class="section-header"> About Me </h3>
         <p class="section-description">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc bibendum vestibulum nulla, lobortis condimentum dui ultrices vehicula. In pharetra tristique odio, ac dapibus ante mollis sed. Nam sed aliquet nisi. Nullam a dignissim diam. Maecenas et mi cursus, dictum nibh vel, mollis orci. Cras quis ex vitae leo dictum efficitur vel eget est. Vestibulum varius fermentum ipsum sed rhoncus. Curabitur congue sem vel tristique aliquam. Nunc placerat purus nisl, a sollicitudin purus faucibus sed.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc bibendum vestibulum nulla, lobortis
+            condimentum dui ultrices vehicula. In pharetra tristique odio, ac dapibus ante mollis sed. Nam sed aliquet
+            nisi. Nullam a dignissim diam. Maecenas et mi cursus, dictum nibh vel, mollis orci. Cras quis ex vitae leo
+            dictum efficitur vel eget est. Vestibulum varius fermentum ipsum sed rhoncus. Curabitur congue sem vel
+            tristique aliquam. Nunc placerat purus nisl, a sollicitudin purus faucibus sed.
 
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc bibendum vestibulum nulla, lobortis condimentum dui ultrices vehicula. In pharetra tristique odio, ac dapibus ante mollis sed. Nam sed aliquet nisi. Nullam a dignissim diam. Maecenas et mi cursus, dictum nibh vel, mollis orci. Cras quis ex vitae leo dictum efficitur vel eget est. Vestibulum varius fermentum ipsum sed rhoncus. Curabitur congue sem vel tristique aliquam. Nunc placerat purus nisl, a sollicitudin purus faucibus sed.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc bibendum vestibulum nulla, lobortis
+            condimentum dui ultrices vehicula. In pharetra tristique odio, ac dapibus ante mollis sed. Nam sed aliquet
+            nisi. Nullam a dignissim diam. Maecenas et mi cursus, dictum nibh vel, mollis orci. Cras quis ex vitae leo
+            dictum efficitur vel eget est. Vestibulum varius fermentum ipsum sed rhoncus. Curabitur congue sem vel
+            tristique aliquam. Nunc placerat purus nisl, a sollicitudin purus faucibus sed.
         </p>
-      </div>
+    </div>
 
-    </section>
+</section>
 
-    <section class="section" id="skills-section">
-      <div class="container">
-       
+<section class="section" id="skills-section">
+    <div class="container">
+
         <h3 class="section-header"> Skills </h3>
-         <div class="section-description">
-          <div class="skills container-fluid">
+        <div class="section-description">
+            <div class="skills container-fluid">
 
-            <div class="row">
+                <div class="row">
 
-              <div class='skillset col-xs-12 col-lg-6 col-xl-6'>
-                <h3 class="subheading"> Languages </h3> 
-                  <h3 class="skill-name"> C </h3>
-                  <div class="progress c">
-                    <div class="progress-bar c" > </div>
-                  </div>
-                  <h3 class="skill-name"> C++ </h3>
-                  <div class="progress cpp">
-                    <div class="progress-bar cpp" > </div>
-                  </div>
-                  <h3 class="skill-name"> C# </h3>
-                  <div class="progress cshrp">
-                    <div class="progress-bar cshrp" > </div>
-                  </div>
-                  <h3 class="skill-name"> Swift </h3>
-                  <div class="progress swift">
-                    <div class="progress-bar swift" > </div>
-                  </div>
-                  <h3 class="skill-name"> Java </h3>
-                  <div class="progress java">
-                    <div class="progress-bar java"> </div>
-                  </div>
-                  <h3 class="skill-name"> Python </h3>
-                  <div class="progress python">
-                    <div class="progress-bar python"> </div>
-                  </div>
-                  <h3 class="skill-name"> SQL </h3>
-                  <div class="progress sql">
-                    <div class="progress-bar sql"> </div>
-                  </div>
+                    <div class='skillset col-xs-12 col-lg-6 col-xl-6'>
+                        <h3 class="subheading"> Languages </h3>
+                        <h3 class="skill-name"> C </h3>
+                        <div class="progress c">
+                            <div class="progress-bar c"></div>
+                        </div>
+                        <h3 class="skill-name"> C++ </h3>
+                        <div class="progress cpp">
+                            <div class="progress-bar cpp"></div>
+                        </div>
+                        <h3 class="skill-name"> C# </h3>
+                        <div class="progress cshrp">
+                            <div class="progress-bar cshrp"></div>
+                        </div>
+                        <h3 class="skill-name"> Swift </h3>
+                        <div class="progress swift">
+                            <div class="progress-bar swift"></div>
+                        </div>
+                        <h3 class="skill-name"> Java </h3>
+                        <div class="progress java">
+                            <div class="progress-bar java"></div>
+                        </div>
+                        <h3 class="skill-name"> Python </h3>
+                        <div class="progress python">
+                            <div class="progress-bar python"></div>
+                        </div>
+                        <h3 class="skill-name"> SQL </h3>
+                        <div class="progress sql">
+                            <div class="progress-bar sql"></div>
+                        </div>
 
-                  <h3 class="subheading"> Web </h3> 
-                  <h3 class="skill-name html"> HTML </h3>
-                  <div class="progress html">
-                    <div class="progress-bar html"> </div>
-                  </div>
-                  <h3 class="skill-name"> CSS </h3>
-                  <div class="progress css">
-                    <div class="progress-bar css"> </div>
-                  </div>
-                  <h3 class="skill-name"> Javascript </h3>
-                  <div class="progress js">
-                    <div class="progress-bar js"> </div>
-                  </div>
-              </div>
-              
-              <div class='skillset col-xs-12 col-lg-6 col-xl-6'>
-                  
-                  <h3 class="subheading"> Design </h3> 
-                  <h3 class="skill-name"> UI & UX Design </h3>
-                  <div class="progress ui">
-                    <div class="progress-bar ui" > </div>
-                  </div>
-                   <h3 class="skill-name"> Website Design </h3>
-                  <div class="progress website">
-                    <div class="progress-bar database" > </div>
-                  </div>
-                  <h3 class="skill-name"> Database Design </h3>
-                  <div class="progress database">
-                    <div class="progress-bar database" > </div>
-                  </div>
+                        <h3 class="subheading"> Web </h3>
+                        <h3 class="skill-name html"> HTML </h3>
+                        <div class="progress html">
+                            <div class="progress-bar html"></div>
+                        </div>
+                        <h3 class="skill-name"> CSS </h3>
+                        <div class="progress css">
+                            <div class="progress-bar css"></div>
+                        </div>
+                        <h3 class="skill-name"> Javascript </h3>
+                        <div class="progress js">
+                            <div class="progress-bar js"></div>
+                        </div>
+                    </div>
 
-                 <h3 class="subheading">Technologies</h3> 
-                  <h3 class="skill-name"> Qt </h3>
-                  <div class="progress qt">
-                    <div class="progress-bar qt" > </div>
-                  </div>
-               
-                  <h3 class="skill-name"> SciKit-Learn </h3>
-                  <div class="progress scikit">
-                    <div class="progress-bar scikit"> </div>
-                  </div>
+                    <div class='skillset col-xs-12 col-lg-6 col-xl-6'>
 
-                  <h3 class="subheading"> Machine Learning </h3> 
-                  <h3 class="skill-name"> Regression </h3>
-                  <div class="progress regression">
-                    <div class="progress-bar regression" > </div>
-                  </div>
-                  <h3 class="skill-name"> Classification </h3>
-                  <div class="progress classification">
-                    <div class="progress-bar classification" > </div>
-                  </div>
-                  <h3 class="skill-name"> Clustering </h3>
-                  <div class="progress clustering">
-                    <div class="progress-bar clustering"> </div>
-                  </div>
-                  <h3 class="skill-name"> Dimentionality Reduction </h3>
-                  <div class="progress dimention">
-                    <div class="progress-bar dimention"> </div>
-                  </div>
-                 
-              
-              </div>
+                        <h3 class="subheading"> Design </h3>
+                        <h3 class="skill-name"> UI & UX Design </h3>
+                        <div class="progress ui">
+                            <div class="progress-bar ui"></div>
+                        </div>
+                        <h3 class="skill-name"> Website Design </h3>
+                        <div class="progress website">
+                            <div class="progress-bar database"></div>
+                        </div>
+                        <h3 class="skill-name"> Database Design </h3>
+                        <div class="progress database">
+                            <div class="progress-bar database"></div>
+                        </div>
 
-              
-            </div>
+                        <h3 class="subheading">Technologies</h3>
+                        <h3 class="skill-name"> Qt </h3>
+                        <div class="progress qt">
+                            <div class="progress-bar qt"></div>
+                        </div>
 
-          </div>
-        </p>
+                        <h3 class="skill-name"> SciKit-Learn </h3>
+                        <div class="progress scikit">
+                            <div class="progress-bar scikit"></div>
+                        </div>
 
-      </div>
-     </section>
-
-    <section class="section hidden" id="project-screen">
-
-        
-      
-    </section>
-
-
-    <section class="section" id="project-section">
-      <h3 class="section-header"> Projects </h3>
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-xl-4 col-lg-4 col-md-6 col-s-12 col-xs-12">
-            <div class="project">
-              <h3>App Classifier</h3>
-              <img class="img-fluid rounded" src="https://imgur.com/CFQagCt.jpg">
-              <p>
-                2048 Game with extra features
-              </p>
-              <div class="anchor-container">
-                <a href="#appclassifier" onclick="removeHash()">Read more</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-xl-4 col-lg-4 col-md-6 col-s-12 col-xs-12">
-            <div class="project">
-              <h3>2048</h3>
-              <video class="img-fluid rounded" autoplay loop muted playsinline>
-               <source src="./img/projects/2048/thumbnail.mp4" type="video/mp4">
-              </video>
-              <p>
-                2048 Game with extra features
-              </p>
-              <div class="anchor-container">
-                <a href="#2048"  onclick="removeHash()">Read more</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-xl-4 col-lg-4 col-md-6 col-s-12 col-xs-12">
-            <div class="project">
-              <h3>Multithread Scraper</h3>
-              <img class="img-fluid rounded" src="https://imgur.com/3n5oewJ.png">
-              <p>
-                2048 Game with extra features
-              </p>
-              <div class="anchor-container">
-                <a href="#multithreadscraper" onclick="removeHash()">Read more</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-xl-4 col-lg-4 col-md-6 col-s-12 col-xs-12">
-            <div class="project">
-              <h3>iMaintenance</h3>
-              <img class="img-fluid rounded" src="./img/projects/imaintenance/thumbnail.png">
-              <p>
-                2048 Game with extra features
-              </p>
-              <div class="anchor-container">
-                <a href="#imaintenance" onclick="removeHash()">Read more</a>
-              </div>
-            </div>
-          </div>
-
-
-          <div class="col-xl-4 col-lg-4 col-md-6 col-s-12 col-xs-12">
-            <div class="project">
-              <h3>OpenGL</h3>
-              <video class="img-fluid rounded" autoplay loop muted playsinline>
-               <source src="./img/projects/opengl/thumbnail.mp4" type="video/mp4">
-              </video>
-              <p>
-                2048 Game with extra features
-              </p>
-              <div class="anchor-container">
-                <a href="#opengl" onclick="removeHash()">Read more</a>
-              </div>
-            </div>
-          </div>
-          
-          <div class="col-xl-4 col-lg-4 col-md-6 col-s-12 col-xs-12">
-            <div class="project">
-              <h3>Kmeans Clustering</h3>
-              <img class="img-fluid rounded" src="https://imgur.com/zeKjsGw.png">
-              <p>
-                2048 Game with extra features
-              </p>
-              <div class="anchor-container">
-                <a href="#kmeans" onclick="removeHash()">Read more</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-xl-4 col-lg-4 col-md-6 col-s-12 col-xs-12">
-            <div class="project">
-              <h3>StackC</h3>
-              <img class="img-fluid rounded" src="./img/projects/stackc/thumbnail.png">
-              <div>
-                <p>
-                  2048 Game with extra features
-                </p>
-                <div class="anchor-container">
-                  <a href="#stackc" onclick="removeHash()">Read more</a>
+                        <h3 class="subheading"> Machine Learning </h3>
+                        <h3 class="skill-name"> Regression </h3>
+                        <div class="progress regression">
+                            <div class="progress-bar regression"></div>
+                        </div>
+                        <h3 class="skill-name"> Classification </h3>
+                        <div class="progress classification">
+                            <div class="progress-bar classification"></div>
+                        </div>
+                        <h3 class="skill-name"> Clustering </h3>
+                        <div class="progress clustering">
+                            <div class="progress-bar clustering"></div>
+                        </div>
+                        <h3 class="skill-name"> Dimentionality Reduction </h3>
+                        <div class="progress dimention">
+                            <div class="progress-bar dimention"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
-          </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="section hidden" id="project-screen">
+
+
+</section>
+
+
+<section class="section" id="project-section">
+    <h3 class="section-header"> Projects </h3>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-4 col-lg-4 col-md-6 col-s-12 col-xs-12">
+                <div class="project">
+                    <h3>App Classifier</h3>
+                    <img class="img-fluid rounded" src="https://imgur.com/CFQagCt.jpg">
+                    <p>
+                        2048 Game with extra features
+                    </p>
+                    <div class="anchor-container">
+                        <a href="#appclassifier" onclick="removeHash()">Read more</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-4 col-md-6 col-s-12 col-xs-12">
+                <div class="project">
+                    <h3>2048</h3>
+                    <video class="img-fluid rounded" autoplay loop muted playsinline>
+                        <source src="./img/projects/2048/thumbnail.mp4" type="video/mp4">
+                    </video>
+                    <p>
+                        2048 Game with extra features
+                    </p>
+                    <div class="anchor-container">
+                        <a href="#2048" onclick="removeHash()">Read more</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-4 col-md-6 col-s-12 col-xs-12">
+                <div class="project">
+                    <h3>Multithread Scraper</h3>
+                    <img class="img-fluid rounded" src="https://imgur.com/3n5oewJ.png">
+                    <p>
+                        2048 Game with extra features
+                    </p>
+                    <div class="anchor-container">
+                        <a href="#multithreadscraper" onclick="removeHash()">Read more</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-4 col-md-6 col-s-12 col-xs-12">
+                <div class="project">
+                    <h3>iMaintenance</h3>
+                    <img class="img-fluid rounded" src="./img/projects/imaintenance/thumbnail.png">
+                    <p>
+                        2048 Game with extra features
+                    </p>
+                    <div class="anchor-container">
+                        <a href="#imaintenance" onclick="removeHash()">Read more</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-xl-4 col-lg-4 col-md-6 col-s-12 col-xs-12">
+                <div class="project">
+                    <h3>OpenGL</h3>
+                    <video class="img-fluid rounded" autoplay loop muted playsinline>
+                        <source src="./img/projects/opengl/thumbnail.mp4" type="video/mp4">
+                    </video>
+                    <p>
+                        2048 Game with extra features
+                    </p>
+                    <div class="anchor-container">
+                        <a href="#opengl" onclick="removeHash()">Read more</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-4 col-md-6 col-s-12 col-xs-12">
+                <div class="project">
+                    <h3>Kmeans Clustering</h3>
+                    <img class="img-fluid rounded" src="https://imgur.com/zeKjsGw.png">
+                    <p>
+                        2048 Game with extra features
+                    </p>
+                    <div class="anchor-container">
+                        <a href="#kmeans" onclick="removeHash()">Read more</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-4 col-md-6 col-s-12 col-xs-12">
+                <div class="project">
+                    <h3>StackC</h3>
+                    <img class="img-fluid rounded" src="./img/projects/stackc/thumbnail.png">
+                    <div>
+                        <p>
+                            2048 Game with extra features
+                        </p>
+                        <div class="anchor-container">
+                            <a href="#stackc" onclick="removeHash()">Read more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         </div>
-      </div>
+    </div>
 
-      <div class="container">
+    <div class="container">
         <div class="row align-items-center">
-       
+
         </div>
-      </div>
+    </div>
 
-      <div class="container">
+    <div class="container">
         <div class="row align-items-center">
-          
-      </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="py-5 bg-white">
-      <div class="container">
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="py-5 bg-white">
+    <div class="container">
         <p class="m-0 text-center text-black small">Copyright &copy; Trevor Xander 2019</p>
-      </div>
-      <!-- /.container -->
-    </footer>
+    </div>
+    <!-- /.container -->
+</footer>
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<!--  JQuery -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<!--  Popper  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous">
+</script>
 
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+<!-- Bootstrap core JavaScript -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous">
+</script>
 
-    <!-- Masjonry script -->
-    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+<!-- Masjonry script -->
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
 
-    <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+<!-- Custom JS script -->
 
-    <script  src="scripts/grid-setup.js"type="text/javascript"></script>
+<script src="scripts/script.min.js" type="text/javascript"></script>
 
 
-  </body>
+</body>
 
 </html>
