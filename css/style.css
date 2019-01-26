@@ -6,7 +6,7 @@ body {
 }
 
 section {
-    margin-top: 5rem;
+    margin-top: 111px;
     margin-bottom: 5rem;
 }
 
@@ -38,11 +38,12 @@ video {
     text-align: center;
 }
 
-.section-description {
-    margin: 0 10% 10%;
-    text-align: justify;
-    font-size: 18px;
+.section-description p {
+    margin: 0 10% 0;
+    text-align: center;
+    font-size: 16pt;
 }
+
 
 .hidden {
     display: none;
@@ -51,6 +52,42 @@ video {
 .deleted {
     visibility: hidden;
 }
+
+#contact-section .row {
+    text-align: center;
+}
+.icon-container {
+    text-align: center;
+}
+.fa {
+    text-align: center !important;
+    font-size: 60pt;
+}
+
+.fa-linkedin {
+    color: rgb(48,114,172);
+}
+
+.fa-linkedin:hover {
+    color: rgba(48,114,172, 0.8);
+    text-decoration: none;
+}
+.fa-github {
+    color: rgb(23,21,21);
+}
+
+.fa-github:hover {
+    color: rgba(23,21,21, 0.8);
+    text-decoration: none;
+}
+
+.icon-name {
+    margin-top: 40px;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+
 
 /* masthead.css */
 
@@ -72,6 +109,7 @@ header.masthead {
     background-position: center center;
     background-attachment: scroll;
     background-size: cover;
+    border-radius: 5px;
 }
 
 header.masthead .masthead-content {
@@ -183,7 +221,8 @@ header.masthead .bg-circle-4 {
 
 
 :root {
-    --nav-bg-color: rgba(255, 255, 255, 0.9);
+    --nav-bg-color-safari: rgba(255, 255, 255, 0.6);
+    --nav-bg-color: rgba(255, 255, 255, .97);
     --last-name-color: rgb(207, 76, 35);
 }
 
@@ -207,7 +246,7 @@ header.masthead .bg-circle-4 {
     position: absolute;
     left: 50%;
     transform: translatex(-50%);
-    transition: all .05s ease-out;
+    transition: all .5s ease-out;
 }
 
 .navbar-toggler {
@@ -218,10 +257,16 @@ header.masthead .bg-circle-4 {
     padding-top: 1rem;
     padding-bottom: 1rem;
     background-color: var(--nav-bg-color) !important;
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-
+    backdrop-filter: blur(12px) saturate(3) ;
+    -webkit-backdrop-filter: blur(12px) saturate(3)  ;
 }
+
+.safari {
+    background-color: var(--nav-bg-color-safari) !important;
+    backdrop-filter: blur(12px) saturate(3) !important ;
+    -webkit-backdrop-filter: blur(12px) saturate(3) !important;
+}
+
 
 .name {
     font-size: 1.2rem;
