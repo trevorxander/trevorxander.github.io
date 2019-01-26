@@ -1,7 +1,35 @@
-window.onload = changePage;
 window.onhashchange = changePage;
 
-$(window).on('load', removeLoadingScreen);
+$(window).on('load', function () {
+    changePage();
+    removeLoadingScreen();
+
+    if (navigator.browserInfo.browser === 'Safari'){
+        $('#navbar').addClass('safari');
+    }
+
+});
+$(window).on('resize', function () {
+    window.dispatchEvent(new Event('scroll'));
+});
+$(window).on('scroll', function () {
+    var skillsVisible = false;
+    Object.keys(skillset).forEach(function (key) {
+        var skillBar = $('.progress.' + key);
+        if (checkVisible(skillBar[0])) skillsVisible = true;
+    });
+    if (skillsVisible) {
+        Object.keys(skillset).forEach(function (key) {
+            var skillBar = $('.progress.' + key);
+            skillBar.css('width', skillset[key]);
+        })
+    } else {
+        Object.keys(skillset).forEach(function (key) {
+            var skillBar = $('.progress.' + key);
+            skillBar.css('width', skillBarMinWidth);
+        })
+    }
+});
 
 var skillset = {
     'c': '75%',
@@ -24,32 +52,8 @@ var skillset = {
     'website': '70%',
     'database': '80%'
 };
-var skillBarMinWidth = '0%';
 
-
-$(window).on('resize', function () {
-    window.dispatchEvent(new Event('scroll'));
-});
-
-
-$(window).on('scroll', function () {
-    var skillsVisible = false;
-    Object.keys(skillset).forEach(function (key) {
-        var skillBar = $('.progress.' + key);
-        if (checkVisible(skillBar[0])) skillsVisible = true;
-    });
-    if (skillsVisible) {
-        Object.keys(skillset).forEach(function (key) {
-            var skillBar = $('.progress.' + key);
-            skillBar.css('width', skillset[key]);
-        })
-    } else {
-        Object.keys(skillset).forEach(function (key) {
-            var skillBar = $('.progress.' + key);
-            skillBar.css('width', skillBarMinWidth);
-        })
-    }
-});
+var skillBarMinWidth = '1%';
 
 function showLoadingScreen() {
     var preloader = $('#preloader');
@@ -74,9 +78,9 @@ function removeLoadingScreen() {
 
 }
 
+pageSections = new Set(['home', 'about', 'skills', 'contact', 'project']);
 
 function changePage() {
-
     var hash = window.location.hash.substr(1);
     if (hash === '') hash = 'home';
 
@@ -84,32 +88,14 @@ function changePage() {
     $('#project-screen').addClass('hidden');
     window.dispatchEvent(new Event('resize'));
 
-    switch (hash) {
-        case 'home':
-            scrollToElement('body');
-            break;
-
-        case 'about':
-            scrollToElement('#about-section');
-            break;
-
-        case 'skills':
-            scrollToElement('#skills-section');
-            break;
-
-        case 'contact':
-            scrollToElement('#project-section');
-            break;
-
-        case 'project':
-            scrollToElement('#project-section');
-            break;
-
-        default:
-            showLoadingScreen();
-            showProject(hash);
-            break;
-
+    if (pageSections.has(hash)){
+        var scrollElement = '#' + hash + '-section';
+        if (hash ==='home') scrollElement = 'body';
+        scrollToElement(scrollElement);
+    }
+    else {
+        showLoadingScreen();
+        showProject(hash);
     }
 }
 
@@ -129,7 +115,6 @@ function showProject(projectName) {
         });
     });
 }
-
 
 
 function checkVisible(elm) {
@@ -187,3 +172,19 @@ function scrollToElement(element) {
         }
     })
 }
+
+navigator.browserInfo = (function () {
+    var ua = navigator.userAgent, tem,
+        M = ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
+    if (/trident/i.test(M[1])) {
+        tem = /\brv[ :]+(\d+)/g.exec(ua) || [];
+        return 'IE ' + (tem[1] || '');
+    }
+    if (M[1] === 'Chrome') {
+        tem = ua.match(/\b(OPR|Edge)\/(\d+)/);
+        if (tem != null) return tem.slice(1).join(' ').replace('OPR', 'Opera');
+    }
+    M = M[2] ? [M[1], M[2]] : [navigator.appName, navigator.appVersion, '-?'];
+    if ((tem = ua.match(/version\/(\d+)/i)) != null) M.splice(1, 1, tem[1]);
+    return {'browser': M[0], 'version': M[1]};
+})();
