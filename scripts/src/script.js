@@ -1,22 +1,36 @@
-window.onhashchange = changePage;
-
 $(window).on('load', function () {
-    changePage();
-    removeLoadingScreen();
-
-    if (navigator.browserInfo.browser === 'Safari'){
+    changePage(window.location.hash.substr(1));
+    if (navigator.browserInfo.browser === 'Safari') {
         $('#navbar').addClass('safari');
     }
 
+    setupGrid();
+    removeLoadingScreen();
+
 });
 $(window).on('resize', function () {
+    if (this.resizeTO) clearTimeout(this.resizeTO);
+    this.resizeTO = setTimeout(function () {
+        $(this).trigger('resizeEnd');
+    }, 300);
+
+});
+
+
+$(window).bind('resizeEnd', function () {
     window.dispatchEvent(new Event('scroll'));
 });
+
+
 $(window).on('scroll', function () {
+    $('#project-section .row').masonry();
     var skillsVisible = false;
     Object.keys(skillset).forEach(function (key) {
         var skillBar = $('.progress.' + key);
-        if (checkVisible(skillBar[0])) skillsVisible = true;
+        if (checkVisible(skillBar[0])) {
+            skillsVisible = true;
+            return false;
+        }
     });
     if (skillsVisible) {
         Object.keys(skillset).forEach(function (key) {
@@ -80,26 +94,24 @@ function removeLoadingScreen() {
 
 pageSections = new Set(['home', 'about', 'skills', 'contact', 'project']);
 
-function changePage() {
-    var hash = window.location.hash.substr(1);
-    if (hash === '') hash = 'home';
+function changePage(hash) {
 
+    if (hash === '') hash = 'home';
     $('#project-section').removeClass('hidden');
     $('#project-screen').addClass('hidden');
-    window.dispatchEvent(new Event('resize'));
 
-    if (pageSections.has(hash)){
+    if (pageSections.has(hash)) {
         var scrollElement = '#' + hash + '-section';
-        if (hash ==='home') scrollElement = 'body';
+        if (hash === 'home') scrollElement = 'body';
         scrollToElement(scrollElement);
-    }
-    else {
-        showLoadingScreen();
+    } else {
         showProject(hash);
     }
+
 }
 
 function showProject(projectName) {
+    showLoadingScreen();
     projectPath = './projects/' + projectName + ".html";
     var $projectScreen = $('#project-screen');
 
@@ -111,11 +123,26 @@ function showProject(projectName) {
             $('* *').imagesLoaded(function () {
                 removeLoadingScreen();
                 scrollToElement("#project-screen");
+
             });
+
         });
     });
 }
 
+
+function videoLoaded(vids, callback) {
+    if (vids.length === 0) {
+        callback();
+    }
+    var vidsLoaded = 0;
+    vids.on('loadeddata', function () {
+        vidsLoaded++;
+        if (vids.length === vidsLoaded) {
+            callback();
+        }
+    });
+}
 
 function checkVisible(elm) {
     var rect = elm.getBoundingClientRect();
@@ -136,17 +163,20 @@ $(function () {
     }
 });
 
-var $container = $('#project-section .row');
-$container.imagesLoaded(function () {
-    $container.masonry({
-        itemSelector: '.col-xl-4',
-        transitionDuration: '0.2s',
-    });
-});
 
-function removeHash() {
-    window.dispatchEvent(new HashChangeEvent("hashchange"));
+function setupGrid() {
+    var $container = $('#project-section .row');
+    $container.imagesLoaded(function () {
+
+        $container.masonry({
+            itemSelector: '.col-xl-4',
+            transitionDuration: '0.2s',
+        });
+    });
+
+
 }
+
 
 var navBarLength = 188;
 

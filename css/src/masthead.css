@@ -121,8 +121,7 @@ header.masthead .bg-circle-4 {
 }
 
 .btn-primary:focus {
-    -webkit-box-shadow: 0 0 0 0.2rem rgba(238, 9, 121, 0.5);
-    box-shadow: 0 0 0 0.2rem rgba(238, 9, 121, 0.5);
+    outline: none;
 }
 
 

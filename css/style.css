@@ -56,6 +56,10 @@ video {
 #contact-section .row {
     text-align: center;
 }
+#contact-info {
+    text-align: left;
+    font-size: 13pt;
+}
 .icon-container {
     text-align: center;
 }
@@ -86,6 +90,7 @@ video {
     font-size: 1.2rem;
     text-align: center;
 }
+
 
 
 
@@ -212,8 +217,7 @@ header.masthead .bg-circle-4 {
 }
 
 .btn-primary:focus {
-    -webkit-box-shadow: 0 0 0 0.2rem rgba(238, 9, 121, 0.5);
-    box-shadow: 0 0 0 0.2rem rgba(238, 9, 121, 0.5);
+    outline: none;
 }
 
 

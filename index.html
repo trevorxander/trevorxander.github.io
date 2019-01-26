@@ -10,20 +10,15 @@
 
     <title>Trevor Xander - Portfolio</title>
 
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
-          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
-          crossorigin="anonymous">
-
-
-    <!-- Custom fonts for this template -->
-    <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i"
-          rel="stylesheet">
-
-    <!-- Social media icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
     <style>
+        .navbar-brand {
+            text-decoration: none;
+            position: absolute;
+            left: 50%;
+            transform: translatex(-50%);
+            transition: all .5s ease-out;
+        }
+
         #preloader {
             position: fixed;
             top: 0;
@@ -46,11 +41,22 @@
             margin: -100px 0 0 -100px;
 
         }
-
     </style>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+          crossorigin="anonymous">
+
+    <!-- Social media icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Custom css -->
     <link href="css/style.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i"
+          rel="stylesheet">
 
 
     <link rel="apple-touch-icon" sizes="180x180" href="./img/icons/apple-touch-icon.png">
@@ -73,7 +79,7 @@
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-light navbar-custom fixed-top" id="navbar">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#home" onclick="removeHash()">
+        <a class="navbar-brand" href="#home" onclick="changePage('home')">
             <span class="first name">Trevor</span>
             <span class="last name">Xander</span>
         </a>
@@ -85,16 +91,16 @@
         <div class="collapse navbar-collapse " id="navbarResponsive">
             <ul class="navbar-nav ml-auto hidden">
                 <li class="nav-item">
-                    <a class="nav-link" href="#about" onclick="removeHash()">About Me</a>
+                    <a class="nav-link" href="#about" onclick="changePage('about')">About Me</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#skills" onclick="removeHash()">Skills</a>
+                    <a class="nav-link" href="#skills" onclick="changePage('skills')">Skills</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#project" onclick="removeHash()">Projects</a>
+                    <a class="nav-link" href="#project" onclick="changePage('project')">Projects</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#contact" onclick="removeHash()">Contact</a>
+                    <a class="nav-link" href="#contact" onclick="changePage('contact')">Contact</a>
                 </li>
             </ul>
         </div>
@@ -107,7 +113,7 @@
         <div class="container">
             <h1 class="masthead-heading-custom">Portfolio</h1>
             <h2 class="masthead-subheading-custom ">Perform. Create. Adapt.</h2>
-            <a href="#project" onclick="removeHash()" class="btn btn-primary btn-xl rounded-pill mt-5">Projects</a>
+            <a href="#project" onclick="changePage('project')" class="btn btn-primary btn-xl rounded-pill mt-5">Projects</a>
         </div>
     </div>
     <div class="bg-circle-1 bg-circle"></div>
@@ -140,7 +146,7 @@
         <h3 class="section-header"> Skills </h3>
         <div class="section-description">
             <p>
-                Evaluatting oneself always tends to be a fillament feat.
+
             </p>
             <div class="skills container-fluid">
 
@@ -263,7 +269,7 @@
                         its description.
                     </p>
                     <div class="anchor-container">
-                        <a href="#appclassifier" onclick="removeHash()">Read more</a>
+                        <a href="#appclassifier" onclick="changePage('appclassifier')">Read more</a>
                     </div>
                 </div>
             </div>
@@ -279,7 +285,7 @@
                         options to adjust the grid size.
                     </p>
                     <div class="anchor-container">
-                        <a href="#2048" onclick="removeHash()">Read more</a>
+                        <a href="#2048" onclick="changePage('2048')">Read more</a>
                     </div>
                 </div>
             </div>
@@ -292,7 +298,9 @@
                         Efficient web scraper made in Python with selenium.
                     </p>
                     <div class="anchor-container">
-                        <a href="#multithreadscraper" onclick="removeHash()">Read more</a>
+                        <a href="https://github.com/trevorxander/MultithreadScraper"
+                           onclick=""
+                            target="_blank">Github</a>
                     </div>
                 </div>
             </div>
@@ -306,12 +314,12 @@
                         Windows file server. Features include a multi-user login system and administrative capabilities.
                     </p>
                     <div class="anchor-container">
-                        <a href="#imaintenance" onclick="removeHash()">Read more</a>
+                        <a href="https://github.com/trevorxander/iMaintenance"
+                           target="_blank"
+                           onclick="">Github</a>
                     </div>
                 </div>
             </div>
-
-
             <div class="col-xl-4 col-lg-4 col-md-6 col-s-12 col-12">
                 <div class="project">
                     <h3>OpenGL</h3>
@@ -319,10 +327,12 @@
                         <source src="./img/projects/opengl/thumbnail.mp4" type="video/mp4">
                     </video>
                     <p>
-                        2048 Game with extra features
+                        Messing around with OpenGL to create interesting visuals.
                     </p>
                     <div class="anchor-container">
-                        <a href="#opengl" onclick="removeHash()">Read more</a>
+                        <a href="#opengl"
+                           target=""
+                           onclick="changePage('opengl')">Read more</a>
                     </div>
                 </div>
             </div>
@@ -335,7 +345,9 @@
                         Program that is able to group any given set points into well-formed clusters.
                     </p>
                     <div class="anchor-container">
-                        <a href="#kmeans" onclick="removeHash()">Read more</a>
+                        <a href="https://github.com/trevorxander/KMeans-Clustering"
+                           target="_blank"
+                           onclick="">Github</a>
                     </div>
                 </div>
             </div>
@@ -349,9 +361,8 @@
                             A fully functional generic and dynamic stack implemented in pure C.
                         </p>
                         <div class="anchor-container">
-                            <a href="https://github.com/trevorxander/StackC" onclick="removeHash()" target="_blank">
-                                Github
-                            </a>
+                            <a href="https://github.com/trevorxander/StackC"
+                               onclick="" target="_blank">Github</a>
                         </div>
                     </div>
                 </div>
@@ -371,17 +382,34 @@
         </div>
         <div class="container-fluid">
             <div class="row justify-content-center align-items-center">
-                <div class="col-xl-2 col-lg-2 col-md-3 col-s-4 col-6">
-                    <div class="icon-container">
-                        <h3 class="icon-name"> GitHub</h3>
-                        <a href="" class="fa  fa-github"></a>
-                    </div>
-                </div>
-                <div class="col-xl-2 col-lg-2 col-md-3 col-s-4 col-6">
+                <div class="col-xl-2 col-lg-2 col-md-3 col-s-4 col-4">
                     <div class="icon-container">
                         <h3 class="icon-name"> LinkedIn</h3>
                         <a href="https://www.linkedin.com/in/txander" target="_blank" class="fa fa-linkedin"></a>
                     </div>
+                </div>
+                <div class="col-xl-2 col-lg-2 col-md-3 col-s-4 col-4">
+                    <div class="icon-container">
+                        <h3 class="icon-name"> GitHub</h3>
+                        <a href="https://github.com/trevorxander" target="_blank" class="fa  fa-github"></a>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-lg-2 col-md-3 col-s-4 col-6" style="text-align: left">
+                    <div id="contact-info">
+                        <p>
+                            <br><br>
+                            Phone:<br>
+                            <a href="tel: +18456331648">(845)&nbsp;633-1648</a>
+                            <br><br>
+                            Email:
+                            <a href="mailto: trevorcolexander@gmail.com">trevorcolexander@gmail.com</a>
+                            <br><br>
+                            Address: <br>
+                            64&nbsp;80&nbsp;Kissena&nbsp;Blvd.
+                            Flushing,&nbsp;NY&nbsp;-&nbsp;11367
+                        </p>
+                    </div>
+
                 </div>
             </div>
         </div>
