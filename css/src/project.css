@@ -64,6 +64,8 @@
 
 #project-screen p {
     font-size: 1.2rem;
+    margin-top: 6px;
+    margin-bottom: 12px;
 }
 
 #project-screen h1 {
