@@ -261,13 +261,17 @@ header.masthead .bg-circle-4 {
     padding-top: 1rem;
     padding-bottom: 1rem;
     background-color: var(--nav-bg-color) !important;
-    backdrop-filter: blur(12px) saturate(3) ;
-    -webkit-backdrop-filter: blur(12px) saturate(3)  ;
+    backdrop-filter: blur(12px) saturate(3);
+    -webkit-backdrop-filter: blur(12px) saturate(3);
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    position: sticky;
 }
 
 .safari {
     background-color: var(--nav-bg-color-safari) !important;
-    backdrop-filter: blur(12px) saturate(3) !important ;
+    backdrop-filter: blur(12px) saturate(3) !important;
     -webkit-backdrop-filter: blur(12px) saturate(3) !important;
 }
 
@@ -305,6 +309,13 @@ header.masthead .bg-circle-4 {
     }
 }
 
+@media (min-height: 500px) {
+
+    .navbar-custom {
+        position: fixed;
+
+    }
+}
 /* project.css */
 
 
