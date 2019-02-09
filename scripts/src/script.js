@@ -1,5 +1,9 @@
 $(window).on('load', function () {
-    changePage(window.location.hash.substr(1));
+    hash = window.location.hash.substr(1);
+    if (hash !== '') {
+        changePage(hash);
+    }
+
     if (navigator.browserInfo.browser === 'Safari') {
         $('#navbar').addClass('safari');
     }
@@ -8,6 +12,12 @@ $(window).on('load', function () {
     removeLoadingScreen();
 
 });
+
+window.onpopstate = function (event) {
+    changePage(window.location.hash.substr(1));
+    window.dispatchEvent(new Event('scroll'));
+};
+
 $(window).on('resize', function () {
     if (this.resizeTO) clearTimeout(this.resizeTO);
     this.resizeTO = setTimeout(function () {
@@ -24,26 +34,9 @@ $(window).bind('resizeEnd', function () {
 
 $(window).on('scroll', function () {
     $('#project-section .row').masonry();
-    var skillsVisible = false;
-    Object.keys(skillset).forEach(function (key) {
-        var skillBar = $('.progress.' + key);
-        if (checkVisible(skillBar[0])) {
-            skillsVisible = true;
-            return false;
-        }
-    });
-    if (skillsVisible) {
-        Object.keys(skillset).forEach(function (key) {
-            var skillBar = $('.progress.' + key);
-            skillBar.css('width', skillset[key]);
-        })
-    } else {
-        Object.keys(skillset).forEach(function (key) {
-            var skillBar = $('.progress.' + key);
-            skillBar.css('width', skillBarMinWidth);
-        })
-    }
+    var closestPage = getCurrentPage();
 });
+
 
 var skillset = {
     'c': '75%',
@@ -66,8 +59,29 @@ var skillset = {
     'website': '70%',
     'database': '80%'
 };
-
 var skillBarMinWidth = '1%';
+
+function skillBarSet() {
+    var skillsVisible = false;
+    Object.keys(skillset).forEach(function (key) {
+        var skillBar = $('.progress.' + key);
+        if (checkVisible(skillBar[0])) {
+            skillsVisible = true;
+            return false;
+        }
+    });
+    if (skillsVisible) {
+        Object.keys(skillset).forEach(function (key) {
+            var skillBar = $('.progress.' + key);
+            skillBar.css('width', skillset[key]);
+        })
+    } else {
+        Object.keys(skillset).forEach(function (key) {
+            var skillBar = $('.progress.' + key);
+            skillBar.css('width', skillBarMinWidth);
+        })
+    }
+}
 
 function showLoadingScreen() {
     var preloader = $('#preloader');
@@ -94,20 +108,29 @@ function removeLoadingScreen() {
 
 pageSections = new Set(['home', 'about', 'skills', 'contact', 'project']);
 
-function changePage(hash) {
-
-    if (hash === '') hash = 'home';
+function changePage(pageName, updateHistory = true) {
+    var prevPage = window.location.hash.substr(1);
     $('#project-section').removeClass('hidden');
     $('#project-screen').addClass('hidden');
 
-    if (pageSections.has(hash)) {
-        var scrollElement = '#' + hash + '-section';
-        if (hash === 'home') scrollElement = 'body';
+    var hash = '#' + pageName;
+
+    if (updateHistory) window.history.pushState('', document.title, hash);
+    else window.history.replaceState('', document.title, hash);
+    if (pageName === 'home') window.history.replaceState("", document.title, window.location.pathname + window.location.search);
+
+    if (pageSections.has(pageName)) {
+        var scrollElement = '#' + pageName + '-section';
+        if (pageName === 'home' || '') scrollElement = 'body';
         scrollToElement(scrollElement);
     } else {
-        showProject(hash);
+        showProject(pageName);
     }
+}
 
+function getCurrentPage() {
+    var minDistance = 9999999;
+    return null;
 }
 
 function showProject(projectName) {
@@ -178,12 +201,15 @@ function setupGrid() {
 }
 
 
-var navBarLength = 188;
+var navBarWidth = 188;
+function distanceFromTop(element) {
+    return (window.pageYOffset + document.querySelector(element).getBoundingClientRect().top) - startingY - navBarWidth;
+}
 
 function scrollToElement(element) {
     var duration = 500;
     var startingY = window.pageYOffset;
-    var diff = (window.pageYOffset + document.querySelector(element).getBoundingClientRect().top) - startingY - navBarLength;
+    var diff = distanceFromTop(element);
     var start;
 
     // Bootstrap our animation - it will get called right before next frame shall be rendered.
