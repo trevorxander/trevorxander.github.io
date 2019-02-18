@@ -35,6 +35,7 @@ $(window).bind('resizeEnd', function () {
 $(window).on('scroll', function () {
     $('#project-section .row').masonry();
     var closestPage = getCurrentPage();
+    skillBarSet();
 });
 
 
@@ -57,7 +58,9 @@ var skillset = {
     'clustering': '22%',
     'dimention': '20%',
     'website': '70%',
-    'database': '80%'
+    'database': '80%',
+    'pytorch': '30%',
+    'bootstrap': '55%'
 };
 var skillBarMinWidth = '1%';
 
@@ -108,7 +111,8 @@ function removeLoadingScreen() {
 
 pageSections = new Set(['home', 'about', 'skills', 'contact', 'project']);
 
-function changePage(pageName, updateHistory = true) {
+function changePage(pageName, updateHistory) {
+    if(updateHistory === undefined) updateHistory = true;
     var prevPage = window.location.hash.substr(1);
     $('#project-section').removeClass('hidden');
     $('#project-screen').addClass('hidden');

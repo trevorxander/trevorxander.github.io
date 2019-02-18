@@ -99,3 +99,10 @@
 .progress.database {
     background: linear-gradient(to right, rgba(89, 168, 244, .6), rgba(89, 168, 244, 1));
 }
+.progress.bootstrap {
+    background: linear-gradient(to right, rgba(89, 168, 244, .6), rgba(89, 168, 244, 1));
+}
+.progress.pytorch {
+    background: linear-gradient(to right, rgba(93, 63, 133, .6), rgba(93, 63, 133, 1));
+}
+

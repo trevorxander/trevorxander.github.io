@@ -514,3 +514,10 @@ header.masthead .bg-circle-4 {
 .progress.database {
     background: linear-gradient(to right, rgba(89, 168, 244, .6), rgba(89, 168, 244, 1));
 }
+.progress.bootstrap {
+    background: linear-gradient(to right, rgba(94, 63, 135, .6), rgba(94, 63, 135, 1));
+}
+.progress.pytorch {
+    background: linear-gradient(to right, rgba(235, 79, 54, .6), rgba(235, 79, 54, 1));
+}
+
