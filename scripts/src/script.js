@@ -207,7 +207,8 @@ function setupGrid() {
 
 var navBarWidth = 188;
 function distanceFromTop(element) {
-    return (window.pageYOffset + document.querySelector(element).getBoundingClientRect().top) - startingY - navBarWidth;
+    var start = window.pageYOffset;
+    return (window.pageYOffset + document.querySelector(element).getBoundingClientRect().top) - start - navBarWidth;
 }
 
 function scrollToElement(element) {
